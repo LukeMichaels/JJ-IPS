@@ -1,0 +1,281 @@
+// ::::::::::::::::::::::::::::::::::::::::
+// includes
+// ::::::::::::::::::::::::::::::::::::::::
+@import "normalize";
+@import "mixins";
+@import "variables";
+
+
+// :::::::::: global
+body {
+  padding: 0;
+  background-color: $color-white;
+  font-family: $font-regular;
+}
+
+.layout-full #main, 
+  .col-full, 
+  .no-sidebar #main {
+    width: 100%;
+    max-width: 100em;
+    margin: 0 auto;
+}
+
+// rad grid system son
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+// column setup
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+//  grouping
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+// grid of two
+.span_2_of_2 {
+	width: 100%;
+}
+.span_1_of_2 {
+	width: 49.2%;
+}
+
+// grid of four
+.span_4_of_4 {
+	width: 100%;
+}
+.span_3_of_4 {
+	width: 74.6%;
+}
+.span_2_of_4 {
+	width: 49.2%;
+}
+.span_1_of_4 {
+	width: 23.8%;
+}
+
+//go full width @ less than 480px
+@media only screen and (max-width: 480px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.span_2_of_2, .span_1_of_2 { width: 100%; }
+}
+
+
+// :::::::::: front page headline
+.home-heading {
+	width: 100%;
+	float: left;
+  background-color: $color-blue;
+   
+  img {
+	  width: 70%;
+	  float: right;
+  }
+   
+  .heading-left {
+	  width: 20%;
+	  float: left;
+	  box-sizing: border-box;
+	  padding-left: 50px;
+  }
+  
+  .heading-right {
+	  width: 80%;
+	  float: left;
+	  box-sizing: border-box;
+	  padding-top: 20px;
+	  padding-right: 30px;
+	  padding-left: 20px;
+  }
+  
+  .lp-headline {
+    color: $color-white;
+    font-family: $font-black;
+    text-align: left;	
+    text-transform: uppercase;
+  }
+  
+  h1.lp-headline {
+    margin: 0px auto;
+    padding-top: 25px;
+    text-align: left;	
+    font-size: 2em;
+    line-height: 1em;
+  }
+
+  h2.lp-headline {
+	  margin: 0 auto;
+	  padding-bottom: 20px;
+	  font-size: 1.09em;
+  }
+ 
+} // .home-heading
+
+
+// fancy border triangles
+%triangles {
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto; //position relative to feature thingy
+	border-top: 30px solid $color-white;//color should match background of feature thingy 	
+	border-left: 500px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+	border-right: 500px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+	border-bottom: 0;	
+	
+  -moz-transform: scale(.9999);  //firefox hack for smooth edges
+	
+	//@include breakpoint($breakpoint-iphone-p){
+		//border-left: 50px solid transparent; //adjust left and right to make triangle more or less acute
+		//border-right: 50px solid transparent; //adjust left and right to make triangle more or less acute
+		//border-top: 30px solid $white;//color should match background of feature thingy 		
+	//}
+}
+
+// inverted triangles for bottoms of images - apply to before and afters
+%inverted-triangles {
+	content: '';
+	width: 50%;
+	height: 0;
+	position: absolute;
+	 //:before gets left:0, :after gets right:0
+	bottom: 0;
+	border-left: 80px solid transparent; //:before gets border-right, :after gets border-left, :none the other one
+	border-right: 80px solid transparent;
+	border-bottom: 30px solid $color-white;	
+	box-sizing: border-box;
+} // inverted-triangles
+
+.down-arrow {
+	width: 100%;
+	display: block;
+	height: 40px;
+	float: left;
+	position: relative;
+	//margin-top: -30px;
+	
+	/*
+  @include breakpoint($breakpoint-iphone-p){
+		margin-top: 20px;
+	}
+  */
+	
+	.blue-line {
+		width: 100%;
+		border-top: 2px solid $color-blue;
+		height: 0;
+		display: block;
+	}
+	
+	.blue-triangle{
+		margin: 0 auto;
+		display: block;
+		width: 75%;
+		position: relative;
+	}
+	
+	//the triangle part
+	.blue-triangle:before {
+		@extend %triangles;
+		border-top-color: $color-blue;		
+		top: -2px; //match border-top thickness	
+		z-index: 4;	
+	}
+	
+	.blue-triangle:after {
+		@extend %triangles;
+		//sits underneath top white triangle to look like a border
+		border-top-color: $color-blue;
+		top: 0;	
+		z-index: 2;
+	}
+
+} // .down-arrow
+
+
+// home video
+.video {
+	width: 100%;
+	float: left;
+	margin-top: -30px;
+	background: url('https://uncommonrealestate.com/wp-content/uploads/2015/02/video-background.svg');
+	background-size: 100%;
+  background-repeat: no-repeat;
+  		
+  .video-wrap {
+	  width: 50%;
+	  margin: 0 auto; 
+	  box-sizing: border-box;
+	  padding: 131px 0; 
+  }
+  
+  .video-highlight {
+  	color: $color-white;
+  	background-color: $color-orange;
+  	text-align: center;
+  	font-family: $font-bold;
+  	font-size: 1.2em;
+  }
+  
+  .video-foot {
+	  box-sizing: border-box;
+	  margin-top: -12px;
+	  padding: 20px 0px 15px;
+  	color: $color-white;
+  	background-color: $color-orange;
+  	text-align: center;
+  	font-family: $font-bold;
+  	font-size: 0.7em;
+  }
+  
+} // .video
+
+// course information
+.course-breakdown {
+	width: 100%;
+	float: left;
+	color: $color-white;
+	background-color: $color-blue;
+	font-family: $font-regular;
+	
+	.white-triangle{
+		margin: 0 auto;
+		display: block;
+		width: 75%;
+		position: relative;
+	}
+	
+	//the triangle part
+	.white-triangle:before {
+		@extend %triangles;
+		border-top-color: $color-white;		
+		top: -2px; //match border-top thickness	
+		z-index: 4;	
+	}
+	
+	.white-triangle:after {
+		@extend %triangles;
+		//sits underneath top white triangle to look like a border
+		border-top-color: $color-white;
+		top: 0;	
+		z-index: 2;
+	}
+	
+} // .course-breakdown

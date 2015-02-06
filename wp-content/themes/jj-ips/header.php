@@ -29,6 +29,10 @@ global $woo_options, $woocommerce;
 	woo_head();
 ?>
 
+<!-- :::::::::: Stylesheets added by Luke :::::::::: -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_url' ); ?>/css/fonts.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_url' ); ?>/css/jj-ips-styles.css" media="screen" />
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -54,7 +58,6 @@ global $woo_options, $woocommerce;
 			?>
 		</nav>
 	</div><!-- /#top -->
-
 
 
     <?php woo_header_before(); ?>

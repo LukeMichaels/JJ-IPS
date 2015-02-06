@@ -1,0 +1,25 @@
+// colors
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-blue: RGBA(32, 51, 102, 1); // #203366 - Biscay
+$color-yellow: #E9BA1F;
+$color-orange: RGBA(225, 128, 63, 1); // Tree Poppy
+
+// fonts
+$font-regular: 'source_sans_proregular';
+$font-italic: 'source_sans_proitalic';
+$font-bold: 'source_sans_probold';
+$font-bold-italic: 'source_sans_probold_italic';
+$font-black: 'source_sans_problack';
+$font-black-italic: 'source_sans_problack_italic';
+$font-awesome: 'FontAwesome';
+
+// ▪︎ breakpoints
+$breakpoint-ipad-p: (768px 1024px) (orientation portrait);
+$breakpoint-ipad-l: (768px 1024px) (orientation landscape);
+$breakpoint-smaller-than-ipad: (max-width: 765px);
+$breakpoint-larger-than-mobile: (min-width: 641px);
+$breakpoint-iphone-p: (320px 568px) (orientation portrait);
+$breakpoint-iphone-l: (320px 568px) (orientation landscape);
+$breakpoint-webkit: (-webkit-min-device-pixel-ratio:0);
+$breakpoint-firefox: (min--moz-device-pixel-ratio:0);

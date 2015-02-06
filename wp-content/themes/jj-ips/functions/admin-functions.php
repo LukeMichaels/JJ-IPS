@@ -2290,62 +2290,6 @@ function wf_get_google_fonts_store () {
 } // End wf_get_google_fonts_store()
 
 /*-----------------------------------------------------------------------------------*/
-/* Google Webfonts Stylesheet Generator */
-/*-----------------------------------------------------------------------------------*/
-/*
-INSTRUCTIONS: Needs to be loaded for the Google Fonts options to work for font options. Add this to
-the specific themes includes/theme-actions.php or functions.php:
-
-add_action( 'wp_head', 'woo_google_webfonts' );
-*/
-
-if ( ! function_exists( 'woo_google_webfonts' ) ) {
-	function woo_google_webfonts() {
-		global $google_fonts;
-		$fonts_to_load = array();
-		$output = '';
-
-		// Setup Woo Options array
-		global $woo_options;
-
-		// Go through the options
-		if ( ! empty( $woo_options ) && ! empty( $google_fonts ) ) {
-			foreach ( $woo_options as $option ) {
-				// Check if option has "face" in array
-				if ( is_array( $option ) && isset( $option['face'] ) ) {
-					// Go through the google font array
-					foreach ( $google_fonts as $font ) {
-						// Check if the google font name exists in the current "face" option
-						if ( $option['face'] == $font['name'] && ! in_array( $font['name'], array_keys( $fonts_to_load ) ) ) {
-							// Add google font to output
-							$variant = '';
-							if ( isset( $font['variant'] ) ) $variant = $font['variant'];
-							$fonts_to_load[$font['name']] = $variant;
-						}
-					}
-				}
-			}
-
-			// Output google font css in header
-			if ( 0 < count( $fonts_to_load ) ) {
-				$fonts_and_variants = array();
-				foreach ( $fonts_to_load as $k => $v ) {
-					$fonts_and_variants[] = $k . $v;
-				}
-				$fonts_and_variants = array_map( 'urlencode', $fonts_and_variants );
-				$fonts = join( '|', $fonts_and_variants );
-
-				$output .= "\n<!-- Google Webfonts -->\n";
-				$output .= '<link href="http'. ( is_ssl() ? 's' : '' ) .'://fonts.googleapis.com/css?family=' . $fonts .'" rel="stylesheet" type="text/css" />'."\n";
-
-				echo $output;
-			}
-		}
-	} // End woo_google_webfonts()
-}
-
-
-/*-----------------------------------------------------------------------------------*/
 /* Enable Home link in WP Menus
 /*-----------------------------------------------------------------------------------*/
 if ( !function_exists( 'woo_home_page_menu_args' ) ) {

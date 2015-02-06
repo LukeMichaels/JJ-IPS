@@ -1,0 +1,785 @@
+{
+"CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
+"creatorBuild": "18270",
+"files": {
+	},
+"hooks": [
+	],
+"lastSavedByUser": "Luke Michaels",
+"manualImportLinks": {
+	},
+"projectAttributes": {
+	"bowerAbbreviatedPath": "",
+	"displayValue": "css",
+	"displayValueWasSetByUser": 0,
+	"iconImageName": "compass_blue"
+	},
+"projectSettings": {
+	"alwaysUseExternalServer": false,
+	"animateCSSInjections": true,
+	"autoApplyPSLanguageSettingsStyle": 0,
+	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoSyncProjectSettingsFile": true,
+	"browserRefreshDelay": 0,
+	"coffeeAutoOutputPathEnabled": true,
+	"coffeeAutoOutputPathFilenamePattern": "*.js",
+	"coffeeAutoOutputPathRelativePath": "",
+	"coffeeAutoOutputPathReplace1": "",
+	"coffeeAutoOutputPathReplace2": "",
+	"coffeeAutoOutputPathStyle": 0,
+	"coffeeCreateSourceMap": false,
+	"coffeeLintFlags2": {
+		"arrow_spacing": {
+			"active": false,
+			"flagValue": -1
+			},
+		"camel_case_classes": {
+			"active": true,
+			"flagValue": -1
+			},
+		"colon_assignment_spacing": {
+			"active": false,
+			"flagValue": 1
+			},
+		"cyclomatic_complexity": {
+			"active": false,
+			"flagValue": 10
+			},
+		"duplicate_key": {
+			"active": true,
+			"flagValue": -1
+			},
+		"empty_constructor_needs_parens": {
+			"active": false,
+			"flagValue": -1
+			},
+		"indentation": {
+			"active": true,
+			"flagValue": 2
+			},
+		"line_endings": {
+			"active": false,
+			"flagValue": 0
+			},
+		"max_line_length": {
+			"active": false,
+			"flagValue": 150
+			},
+		"missing_fat_arrows": {
+			"active": false,
+			"flagValue": -1
+			},
+		"newlines_after_classes": {
+			"active": false,
+			"flagValue": 3
+			},
+		"no_backticks": {
+			"active": true,
+			"flagValue": -1
+			},
+		"no_debugger": {
+			"active": true,
+			"flagValue": -1
+			},
+		"no_empty_functions": {
+			"active": false,
+			"flagValue": -1
+			},
+		"no_empty_param_list": {
+			"active": false,
+			"flagValue": -1
+			},
+		"no_implicit_braces": {
+			"active": true,
+			"flagValue": -1
+			},
+		"no_implicit_parens": {
+			"active": false,
+			"flagValue": -1
+			},
+		"no_interpolation_in_single_quotes": {
+			"active": false,
+			"flagValue": -1
+			},
+		"no_plusplus": {
+			"active": false,
+			"flagValue": -1
+			},
+		"no_stand_alone_at": {
+			"active": true,
+			"flagValue": -1
+			},
+		"no_tabs": {
+			"active": true,
+			"flagValue": -1
+			},
+		"no_throwing_strings": {
+			"active": true,
+			"flagValue": -1
+			},
+		"no_trailing_semicolons": {
+			"active": true,
+			"flagValue": -1
+			},
+		"no_trailing_whitespace": {
+			"active": true,
+			"flagValue": -1
+			},
+		"no_unnecessary_double_quotes": {
+			"active": false,
+			"flagValue": -1
+			},
+		"no_unnecessary_fat_arrows": {
+			"active": true,
+			"flagValue": -1
+			},
+		"non_empty_constructor_needs_parens": {
+			"active": false,
+			"flagValue": -1
+			},
+		"prefer_english_operator": {
+			"active": false,
+			"flagValue": -1
+			},
+		"space_operators": {
+			"active": false,
+			"flagValue": -1
+			}
+		},
+	"coffeeMinifyOutput": true,
+	"coffeeOutputStyle": 0,
+	"coffeeSyntaxCheckerStyle": 1,
+	"externalServerAddress": "http:\/\/localhost:8888",
+	"externalServerPreviewPathAddition": "",
+	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
+	"hamlAutoOutputPathEnabled": true,
+	"hamlAutoOutputPathFilenamePattern": "*.html",
+	"hamlAutoOutputPathRelativePath": "",
+	"hamlAutoOutputPathReplace1": "",
+	"hamlAutoOutputPathReplace2": "",
+	"hamlAutoOutputPathStyle": 0,
+	"hamlEscapeHTMLCharacters": false,
+	"hamlNoEscapeInAttributes": false,
+	"hamlOutputFormat": 2,
+	"hamlOutputStyle": 0,
+	"hamlUseCDATA": false,
+	"hamlUseDoubleQuotes": false,
+	"hamlUseUnixNewlines": false,
+	"jadeAutoOutputPathEnabled": true,
+	"jadeAutoOutputPathFilenamePattern": "*.html",
+	"jadeAutoOutputPathRelativePath": "",
+	"jadeAutoOutputPathReplace1": "",
+	"jadeAutoOutputPathReplace2": "",
+	"jadeAutoOutputPathStyle": 0,
+	"jadeCompileDebug": true,
+	"jadeOutputStyle": 0,
+	"javascriptAutoOutputPathEnabled": true,
+	"javascriptAutoOutputPathFilenamePattern": "*-min.js",
+	"javascriptAutoOutputPathRelativePath": "\/min",
+	"javascriptAutoOutputPathReplace1": "",
+	"javascriptAutoOutputPathReplace2": "",
+	"javascriptAutoOutputPathStyle": 2,
+	"javascriptCreateSourceMap": true,
+	"javascriptOutputStyle": 1,
+	"javascriptSyntaxCheckerStyle": 1,
+	"jsCheckerReservedNamesString": "",
+	"jsHintFlags2": {
+		"asi": {
+			"active": false,
+			"flagValue": -1
+			},
+		"bitwise": {
+			"active": true,
+			"flagValue": -1
+			},
+		"boss": {
+			"active": false,
+			"flagValue": -1
+			},
+		"browser": {
+			"active": true,
+			"flagValue": -1
+			},
+		"camelcase": {
+			"active": false,
+			"flagValue": -1
+			},
+		"couch": {
+			"active": false,
+			"flagValue": -1
+			},
+		"curly": {
+			"active": true,
+			"flagValue": -1
+			},
+		"debug": {
+			"active": false,
+			"flagValue": -1
+			},
+		"devel": {
+			"active": false,
+			"flagValue": -1
+			},
+		"dojo": {
+			"active": false,
+			"flagValue": -1
+			},
+		"eqeqeq": {
+			"active": true,
+			"flagValue": -1
+			},
+		"eqnull": {
+			"active": false,
+			"flagValue": -1
+			},
+		"es3": {
+			"active": false,
+			"flagValue": -1
+			},
+		"esnext": {
+			"active": false,
+			"flagValue": -1
+			},
+		"evil": {
+			"active": false,
+			"flagValue": -1
+			},
+		"expr": {
+			"active": false,
+			"flagValue": -1
+			},
+		"forin": {
+			"active": false,
+			"flagValue": -1
+			},
+		"freeze": {
+			"active": true,
+			"flagValue": -1
+			},
+		"funcscope": {
+			"active": false,
+			"flagValue": -1
+			},
+		"globalstrict": {
+			"active": false,
+			"flagValue": -1
+			},
+		"immed": {
+			"active": false,
+			"flagValue": -1
+			},
+		"indent": {
+			"active": false,
+			"flagValue": 4
+			},
+		"iterator": {
+			"active": false,
+			"flagValue": -1
+			},
+		"jquery": {
+			"active": true,
+			"flagValue": -1
+			},
+		"lastsemic": {
+			"active": false,
+			"flagValue": -1
+			},
+		"latedef": {
+			"active": true,
+			"flagValue": -1
+			},
+		"laxbreak": {
+			"active": false,
+			"flagValue": -1
+			},
+		"laxcomma": {
+			"active": false,
+			"flagValue": -1
+			},
+		"loopfunc": {
+			"active": false,
+			"flagValue": -1
+			},
+		"maxcomplexity": {
+			"active": false,
+			"flagValue": 10
+			},
+		"maxdepth": {
+			"active": false,
+			"flagValue": 3
+			},
+		"maxlen": {
+			"active": false,
+			"flagValue": 150
+			},
+		"maxparams": {
+			"active": false,
+			"flagValue": 3
+			},
+		"maxstatements": {
+			"active": false,
+			"flagValue": 4
+			},
+		"mootools": {
+			"active": false,
+			"flagValue": -1
+			},
+		"moz": {
+			"active": false,
+			"flagValue": -1
+			},
+		"multistr": {
+			"active": false,
+			"flagValue": -1
+			},
+		"newcap": {
+			"active": true,
+			"flagValue": -1
+			},
+		"noarg": {
+			"active": true,
+			"flagValue": -1
+			},
+		"node": {
+			"active": false,
+			"flagValue": -1
+			},
+		"noempty": {
+			"active": false,
+			"flagValue": -1
+			},
+		"nonbsp": {
+			"active": false,
+			"flagValue": -1
+			},
+		"nonew": {
+			"active": true,
+			"flagValue": -1
+			},
+		"nonstandard": {
+			"active": false,
+			"flagValue": -1
+			},
+		"notypeof": {
+			"active": true,
+			"flagValue": -1
+			},
+		"noyield": {
+			"active": false,
+			"flagValue": -1
+			},
+		"onecase": {
+			"active": false,
+			"flagValue": -1
+			},
+		"phantom": {
+			"active": false,
+			"flagValue": -1
+			},
+		"plusplus": {
+			"active": false,
+			"flagValue": -1
+			},
+		"proto": {
+			"active": false,
+			"flagValue": -1
+			},
+		"prototypejs": {
+			"active": false,
+			"flagValue": -1
+			},
+		"regexp": {
+			"active": true,
+			"flagValue": -1
+			},
+		"rhino": {
+			"active": false,
+			"flagValue": -1
+			},
+		"scripturl": {
+			"active": false,
+			"flagValue": -1
+			},
+		"shadow": {
+			"active": false,
+			"flagValue": -1
+			},
+		"shelljs": {
+			"active": false,
+			"flagValue": -1
+			},
+		"singleGroups": {
+			"active": false,
+			"flagValue": -1
+			},
+		"strict": {
+			"active": false,
+			"flagValue": -1
+			},
+		"sub": {
+			"active": false,
+			"flagValue": -1
+			},
+		"supernew": {
+			"active": false,
+			"flagValue": -1
+			},
+		"typed": {
+			"active": false,
+			"flagValue": -1
+			},
+		"undef": {
+			"active": true,
+			"flagValue": -1
+			},
+		"unused": {
+			"active": true,
+			"flagValue": -1
+			},
+		"withstmt": {
+			"active": false,
+			"flagValue": -1
+			},
+		"worker": {
+			"active": false,
+			"flagValue": -1
+			},
+		"wsh": {
+			"active": false,
+			"flagValue": -1
+			},
+		"yui": {
+			"active": false,
+			"flagValue": -1
+			}
+		},
+	"jsLintFlags2": {
+		"ass": {
+			"active": false,
+			"flagValue": -1
+			},
+		"bitwise": {
+			"active": false,
+			"flagValue": -1
+			},
+		"browser": {
+			"active": true,
+			"flagValue": -1
+			},
+		"closure": {
+			"active": false,
+			"flagValue": -1
+			},
+		"continue": {
+			"active": false,
+			"flagValue": -1
+			},
+		"debug": {
+			"active": false,
+			"flagValue": -1
+			},
+		"devel": {
+			"active": false,
+			"flagValue": -1
+			},
+		"eqeq": {
+			"active": false,
+			"flagValue": -1
+			},
+		"evil": {
+			"active": false,
+			"flagValue": -1
+			},
+		"forin": {
+			"active": false,
+			"flagValue": -1
+			},
+		"indent": {
+			"active": false,
+			"flagValue": 4
+			},
+		"maxlen": {
+			"active": false,
+			"flagValue": 150
+			},
+		"newcap": {
+			"active": false,
+			"flagValue": -1
+			},
+		"node": {
+			"active": false,
+			"flagValue": -1
+			},
+		"nomen": {
+			"active": false,
+			"flagValue": -1
+			},
+		"plusplus": {
+			"active": false,
+			"flagValue": -1
+			},
+		"properties": {
+			"active": false,
+			"flagValue": -1
+			},
+		"regexp": {
+			"active": false,
+			"flagValue": -1
+			},
+		"rhino": {
+			"active": false,
+			"flagValue": -1
+			},
+		"sloppy": {
+			"active": false,
+			"flagValue": -1
+			},
+		"stupid": {
+			"active": false,
+			"flagValue": -1
+			},
+		"sub": {
+			"active": false,
+			"flagValue": -1
+			},
+		"todo": {
+			"active": false,
+			"flagValue": -1
+			},
+		"unparam": {
+			"active": false,
+			"flagValue": -1
+			},
+		"vars": {
+			"active": false,
+			"flagValue": -1
+			},
+		"white": {
+			"active": false,
+			"flagValue": -1
+			}
+		},
+	"kitAutoOutputPathEnabled": true,
+	"kitAutoOutputPathFilenamePattern": "*.html",
+	"kitAutoOutputPathRelativePath": "",
+	"kitAutoOutputPathReplace1": "",
+	"kitAutoOutputPathReplace2": "",
+	"kitAutoOutputPathStyle": 0,
+	"lessAllowInsecureImports": false,
+	"lessAutoOutputPathEnabled": true,
+	"lessAutoOutputPathFilenamePattern": "*.css",
+	"lessAutoOutputPathRelativePath": "..\/css",
+	"lessAutoOutputPathReplace1": "less",
+	"lessAutoOutputPathReplace2": "css",
+	"lessAutoOutputPathStyle": 2,
+	"lessCreateSourceMap": false,
+	"lessDisableJavascript": false,
+	"lessIeCompatibility": true,
+	"lessOutputStyle": 0,
+	"lessRelativeURLS": false,
+	"lessStrictImports": false,
+	"lessStrictMath": false,
+	"lessStrictUnits": false,
+	"markdownAutoOutputPathEnabled": true,
+	"markdownAutoOutputPathFilenamePattern": "*.html",
+	"markdownAutoOutputPathRelativePath": "",
+	"markdownAutoOutputPathReplace1": "",
+	"markdownAutoOutputPathReplace2": "",
+	"markdownAutoOutputPathStyle": 0,
+	"markdownEnableFootnotes": false,
+	"markdownEnableSmartyPants": true,
+	"markdownExpandTabs": true,
+	"reloadFileURLs": false,
+	"sassAutoOutputPathEnabled": true,
+	"sassAutoOutputPathFilenamePattern": "*.css",
+	"sassAutoOutputPathRelativePath": "..\/css",
+	"sassAutoOutputPathReplace1": "sass",
+	"sassAutoOutputPathReplace2": "css",
+	"sassAutoOutputPathStyle": 2,
+	"sassCreateSourceMap": false,
+	"sassDebugStyle": 0,
+	"sassDecimalPrecision": 10,
+	"sassOutputStyle": 0,
+	"sassUseLibsass": false,
+	"shouldRunAutoprefixer": false,
+	"shouldRunBless": false,
+	"skippedItemsString": ".svn, .git, .hg, log, _logs, _cache, cache, logs, node_modules",
+	"slimAutoOutputPathEnabled": true,
+	"slimAutoOutputPathFilenamePattern": "*.html",
+	"slimAutoOutputPathRelativePath": "",
+	"slimAutoOutputPathReplace1": "",
+	"slimAutoOutputPathReplace2": "",
+	"slimAutoOutputPathStyle": 0,
+	"slimCompileOnly": false,
+	"slimLogicless": false,
+	"slimOutputStyle": 1,
+	"slimRailsCompatible": false,
+	"stylusAutoOutputPathEnabled": true,
+	"stylusAutoOutputPathFilenamePattern": "*.css",
+	"stylusAutoOutputPathRelativePath": "..\/css",
+	"stylusAutoOutputPathReplace1": "stylus",
+	"stylusAutoOutputPathReplace2": "css",
+	"stylusAutoOutputPathStyle": 2,
+	"stylusCreateSourceMap": false,
+	"stylusDebugStyle": 0,
+	"stylusImportCSS": false,
+	"stylusOutputStyle": 0,
+	"stylusResolveRelativeURLS": false,
+	"typescriptAutoOutputPathEnabled": true,
+	"typescriptAutoOutputPathFilenamePattern": "*.js",
+	"typescriptAutoOutputPathRelativePath": "\/js",
+	"typescriptAutoOutputPathReplace1": "",
+	"typescriptAutoOutputPathReplace2": "",
+	"typescriptAutoOutputPathStyle": 2,
+	"typescriptCreateDeclarationFile": false,
+	"typescriptCreateSourceMap": false,
+	"typescriptMinifyOutput": false,
+	"typescriptModuleType": 0,
+	"typescriptNoImplicitAny": false,
+	"typescriptNoResolve": false,
+	"typescriptRemoveComments": false,
+	"typescriptTargetECMAVersion": 0,
+	"uglifyDefinesString": "",
+	"uglifyFlags2": {
+		"ascii-only": {
+			"active": false,
+			"flagValue": -1
+			},
+		"booleans": {
+			"active": true,
+			"flagValue": -1
+			},
+		"bracketize": {
+			"active": false,
+			"flagValue": -1
+			},
+		"cascade": {
+			"active": true,
+			"flagValue": -1
+			},
+		"comments": {
+			"active": true,
+			"flagValue": -1
+			},
+		"comparisons": {
+			"active": true,
+			"flagValue": -1
+			},
+		"compress": {
+			"active": true,
+			"flagValue": -1
+			},
+		"conditionals": {
+			"active": true,
+			"flagValue": -1
+			},
+		"dead_code": {
+			"active": false,
+			"flagValue": -1
+			},
+		"drop_debugger": {
+			"active": true,
+			"flagValue": -1
+			},
+		"eval": {
+			"active": false,
+			"flagValue": -1
+			},
+		"evaluate": {
+			"active": true,
+			"flagValue": -1
+			},
+		"hoist_funs": {
+			"active": true,
+			"flagValue": -1
+			},
+		"hoist_vars": {
+			"active": false,
+			"flagValue": -1
+			},
+		"if_return": {
+			"active": true,
+			"flagValue": -1
+			},
+		"indent-level": {
+			"active": false,
+			"flagValue": 4
+			},
+		"indent-start": {
+			"active": false,
+			"flagValue": 0
+			},
+		"inline-script": {
+			"active": false,
+			"flagValue": -1
+			},
+		"join_vars": {
+			"active": true,
+			"flagValue": -1
+			},
+		"loops": {
+			"active": true,
+			"flagValue": -1
+			},
+		"mangle": {
+			"active": true,
+			"flagValue": -1
+			},
+		"max-line-len": {
+			"active": true,
+			"flagValue": 32000
+			},
+		"properties": {
+			"active": true,
+			"flagValue": -1
+			},
+		"quote-keys": {
+			"active": false,
+			"flagValue": -1
+			},
+		"screw-ie8": {
+			"active": false,
+			"flagValue": -1
+			},
+		"semicolons": {
+			"active": true,
+			"flagValue": -1
+			},
+		"sequences": {
+			"active": true,
+			"flagValue": -1
+			},
+		"sort": {
+			"active": false,
+			"flagValue": -1
+			},
+		"space-colon": {
+			"active": true,
+			"flagValue": -1
+			},
+		"toplevel": {
+			"active": false,
+			"flagValue": -1
+			},
+		"unsafe": {
+			"active": false,
+			"flagValue": -1
+			},
+		"unused": {
+			"active": false,
+			"flagValue": -1
+			},
+		"warnings": {
+			"active": false,
+			"flagValue": -1
+			},
+		"width": {
+			"active": true,
+			"flagValue": 80
+			}
+		},
+	"uglifyReservedNamesString": "$",
+	"websiteRelativeRoot": ""
+	},
+"settingsFileVersion": "2"
+}
