@@ -18,20 +18,22 @@ global $woo_options, $woocommerce;
 <html <?php language_attributes(); ?> class="<?php if ( $woo_options['woo_boxed_layout'] == 'true' ) echo 'boxed'; ?> <?php if (!class_exists('woocommerce')) echo 'woocommerce-deactivated'; ?>">
 <head>
 
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+  <meta charset="<?php bloginfo( 'charset' ); ?>" />
+  
+  <title><?php woo_title(''); ?></title>
+  <?php woo_meta(); ?>
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
+  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+  <?php
+  	wp_head();
+  	woo_head();
+  ?>
 
-<title><?php woo_title(''); ?></title>
-<?php woo_meta(); ?>
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php
-	wp_head();
-	woo_head();
-?>
-
-<!-- :::::::::: Stylesheets added by Luke :::::::::: -->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_url' ); ?>/css/fonts.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_url' ); ?>/css/jj-ips-styles.css" media="screen" />
+  
+  <!-- :::::::::: Stylesheets added by Luke :::::::::: -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_url' ); ?>/css/fonts.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_url' ); ?>/css/jj-ips-styles.css" media="screen" />
 
 </head>
 

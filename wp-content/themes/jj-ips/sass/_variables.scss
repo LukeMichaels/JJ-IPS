@@ -1,8 +1,8 @@
 // colors
 $color-black: #000000;
-$color-white: #FFFFFF;
+$color-white: RGBA(255, 255, 255, 1); // #FFFFFF - White
 $color-blue: RGBA(32, 51, 102, 1); // #203366 - Biscay
-$color-yellow: #E9BA1F;
+$color-yellow: RGBA(230, 184, 31, 1); // #E9BA1F - Gold Tips
 $color-orange: RGBA(225, 128, 63, 1); // Tree Poppy
 
 // fonts
@@ -23,3 +23,10 @@ $breakpoint-iphone-p: (320px 568px) (orientation portrait);
 $breakpoint-iphone-l: (320px 568px) (orientation landscape);
 $breakpoint-webkit: (-webkit-min-device-pixel-ratio:0);
 $breakpoint-firefox: (min--moz-device-pixel-ratio:0);
+
+// custom breakpoints for this project
+$breakpoint-main: max-width 1260px;
+$breakpoint-one: max-width 1215px;
+$breakpoint-two: max-width 1150px;
+$breakpoint-three: max-width 1065px;
+$breakpoint-four: max-width 975px;

@@ -4,13 +4,17 @@
 @import "normalize";
 @import "mixins";
 @import "variables";
-
+@import "compass";
+@import "breakpoint"; // http://breakpoint-sass.com
 
 // :::::::::: global
 body {
   padding: 0;
   background-color: $color-white;
   font-family: $font-regular;
+  hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
 }
 
 .layout-full #main, 
@@ -28,6 +32,16 @@ body {
 	margin: 0px;
 }
 
+//fix weird whitespace at top caused by theme defaults
+.type-page {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: none;
+}
+
 // column setup
 .col {
 	display: block;
@@ -42,27 +56,22 @@ body {
 .group:after { clear:both;}
 .group { zoom:1; /* For IE 6/7 */ }
 
+.span_1_of_1 { width: 100%; }
+
 // grid of two
-.span_2_of_2 {
-	width: 100%;
-}
-.span_1_of_2 {
-	width: 49.2%;
-}
+.span_2_of_2 { width: 100%; }
+.span_1_of_2 { width: 49.2%; }
+
+/*  GRID OF THREE  */
+.span_3_of_3 { width: 100%; }
+.span_2_of_3 { width: 66.13%; }
+.span_1_of_3 { width: 32.26%; }
 
 // grid of four
-.span_4_of_4 {
-	width: 100%;
-}
-.span_3_of_4 {
-	width: 74.6%;
-}
-.span_2_of_4 {
-	width: 49.2%;
-}
-.span_1_of_4 {
-	width: 23.8%;
-}
+.span_4_of_4 { width: 100%; }
+.span_3_of_4 { width: 74.6%; }
+.span_2_of_4 { width: 49.2%; }
+.span_1_of_4 { width: 23.8%; }
 
 //go full width @ less than 480px
 @media only screen and (max-width: 480px) {
@@ -71,83 +80,89 @@ body {
 	}
 }
 @media only screen and (max-width: 480px) {
-	.span_2_of_2, .span_1_of_2 { width: 100%; }
+	.span_1_of_4, .span_3_of_4, .span_2_of_3, .span_1_of_3, .span_2_of_2, .span_1_of_2 { width: 100%; }
 }
 
-
-// :::::::::: front page headline
-.home-heading {
-	width: 100%;
-	float: left;
-  background-color: $color-blue;
-   
-  img {
-	  width: 70%;
-	  float: right;
-  }
-   
-  .heading-left {
-	  width: 20%;
-	  float: left;
-	  box-sizing: border-box;
-	  padding-left: 50px;
-  }
+.display-on-mobile {
+  display: none;
   
-  .heading-right {
-	  width: 80%;
-	  float: left;
-	  box-sizing: border-box;
-	  padding-top: 20px;
-	  padding-right: 30px;
-	  padding-left: 20px;
+  @include breakpoint($breakpoint-smaller-than-ipad) {
+	  display: block !important;
   }
-  
-  .lp-headline {
-    color: $color-white;
-    font-family: $font-black;
-    text-align: left;	
-    text-transform: uppercase;
+  @include breakpoint($breakpoint-iphone-p) {
+	  display: block !important;
   }
-  
-  h1.lp-headline {
-    margin: 0px auto;
-    padding-top: 25px;
-    text-align: left;	
-    font-size: 2em;
-    line-height: 1em;
+  @include breakpoint($breakpoint-iphone-l) {
+	  display: block !important;
   }
+}
 
-  h2.lp-headline {
-	  margin: 0 auto;
-	  padding-bottom: 20px;
-	  font-size: 1.09em;
+.hide-on-mobile {
+  display: block;
+  
+  @include breakpoint($breakpoint-smaller-than-ipad) {
+	  display: none !important;
   }
- 
-} // .home-heading
-
+  @include breakpoint($breakpoint-iphone-p) {
+	  display: none !important;
+  }
+  @include breakpoint($breakpoint-iphone-l) {
+	  display: none !important;
+  }
+}
 
 // fancy border triangles
 %triangles {
-	content: '';
-	width: 0;
-	height: 0;
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin: 0 auto; //position relative to feature thingy
-	border-top: 30px solid $color-white;//color should match background of feature thingy 	
-	border-left: 500px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
-	border-right: 500px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
-	border-bottom: 0;	
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto; //position relative to feature thingy
+  border-top: 30px solid $color-blue;//color should match background of feature thingy 	
+  border-left: 500px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+  border-right: 500px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+  border-bottom: 0;	
 	
   -moz-transform: scale(.9999);  //firefox hack for smooth edges
+  
+  @include breakpoint ($breakpoint-two) {
+    border-top: 30px solid $color-blue;//color should match background of feature thingy 	
+    border-left: 450px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-right: 450px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-bottom: 0;
+  }
+  
+  @include breakpoint ($breakpoint-three) {
+    border-top: 30px solid $color-blue;//color should match background of feature thingy 	
+    border-left: 425px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-right: 425px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-bottom: 0;
+  }
+  
+  @include breakpoint ($breakpoint-four) {
+    border-top: 30px solid $color-blue;//color should match background of feature thingy 	
+    border-left: 400px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-right: 400px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-bottom: 0;
+  }
 	
-	//@include breakpoint($breakpoint-iphone-p){
-		//border-left: 50px solid transparent; //adjust left and right to make triangle more or less acute
-		//border-right: 50px solid transparent; //adjust left and right to make triangle more or less acute
-		//border-top: 30px solid $white;//color should match background of feature thingy 		
-	//}
-}
+	@include breakpoint ($breakpoint-ipad-p) {
+    border-top: 30px solid $color-blue;//color should match background of feature thingy 	
+    border-left: 300px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-right: 300px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-bottom: 0;
+  }
+	
+	@include breakpoint ($breakpoint-iphone-p) {
+  	border-top: 30px solid $color-blue;//color should match background of feature thingy 		
+		border-left: 120px solid transparent; //adjust left and right to make triangle more or less acute
+		border-right: 120px solid transparent; //adjust left and right to make triangle more or less acute
+		border-bottom: 0;
+	}
+	
+} // %triangles
 
 // inverted triangles for bottoms of images - apply to before and afters
 %inverted-triangles {
@@ -161,7 +176,52 @@ body {
 	border-right: 80px solid transparent;
 	border-bottom: 30px solid $color-white;	
 	box-sizing: border-box;
-} // inverted-triangles
+	
+	-moz-transform: scale(.9999);  //firefox hack for smooth edges
+	
+	@include breakpoint ($breakpoint-ipad-p) {
+    border-top: 30px solid $color-white;//color should match background of feature thingy 	
+    border-left: 300px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-right: 300px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-bottom: 0;
+  }
+  
+   @include breakpoint ($breakpoint-two) {
+    border-top: 30px solid $color-white;//color should match background of feature thingy 	
+    border-left: 450px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-right: 450px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-bottom: 0;
+  }
+  
+  @include breakpoint ($breakpoint-three) {
+    border-top: 30px solid $color-white;//color should match background of feature thingy 	
+    border-left: 425px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-right: 425px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-bottom: 0;
+  }
+  
+  @include breakpoint ($breakpoint-four) {
+    border-top: 30px solid $color-white;//color should match background of feature thingy 	
+    border-left: 400px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-right: 400px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-bottom: 0;
+  }
+	
+	@include breakpoint ($breakpoint-ipad-p) {
+    border-top: 30px solid $color-white;//color should match background of feature thingy 	
+    border-left: 300px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-right: 300px solid rgba(255, 255, 255, 0);; //adjust left and right to make triangle more or less acute
+    border-bottom: 0;
+  }
+	
+	@include breakpoint ($breakpoint-iphone-p) {
+  	border-top: 30px solid $color-white;//color should match background of feature thingy 		
+		border-left: 120px solid transparent; //adjust left and right to make triangle more or less acute
+		border-right: 120px solid transparent; //adjust left and right to make triangle more or less acute
+		border-bottom: 0;
+	}
+	
+} // %inverted-triangles
 
 .down-arrow {
 	width: 100%;
@@ -169,45 +229,144 @@ body {
 	height: 40px;
 	float: left;
 	position: relative;
-	//margin-top: -30px;
 	
-	/*
+	@include breakpoint ($breakpoint-two) {
+    height: 30px;
+  }
+	
+	@include breakpoint ($breakpoint-four) {
+    height: 31px;
+  }
+  
+  @include breakpoint ($breakpoint-ipad-p) {
+    height: 30px;  
+  }
+	
   @include breakpoint($breakpoint-iphone-p){
-		margin-top: 20px;
+		height: 30px;
 	}
-  */
-	
-	.blue-line {
-		width: 100%;
-		border-top: 2px solid $color-blue;
-		height: 0;
-		display: block;
-	}
-	
-	.blue-triangle{
-		margin: 0 auto;
-		display: block;
-		width: 75%;
-		position: relative;
-	}
-	
-	//the triangle part
-	.blue-triangle:before {
-		@extend %triangles;
-		border-top-color: $color-blue;		
-		top: -2px; //match border-top thickness	
-		z-index: 4;	
-	}
-	
-	.blue-triangle:after {
-		@extend %triangles;
-		//sits underneath top white triangle to look like a border
-		border-top-color: $color-blue;
-		top: 0;	
-		z-index: 2;
-	}
-
+  
 } // .down-arrow
+
+.blue-triangle{
+  margin: 0 auto;
+  display: block;
+  width: 75%;
+  position: relative;
+}
+
+//the triangle part
+.blue-triangle:before {
+  @extend %triangles;
+  border-top-color: $color-blue;		
+  top: -2px; //match border-top thickness	
+  z-index: 4;	
+}
+
+.blue-triangle:after {
+  @extend %triangles;
+  //sits underneath top white triangle to look like a border
+  border-top-color: $color-blue;
+  top: 0;	
+  z-index: 2;
+}
+
+.white-triangle{
+  margin: 0 auto;
+  display: block;
+  width: 75%;
+  position: relative;
+}
+
+//the triangle part
+.white-triangle:before {
+  @extend %triangles;
+  border-top-color: $color-white;		
+  top: -2px; //match border-top thickness	
+  z-index: 4;	
+}
+
+.white-triangle:after {
+  @extend %triangles;
+  //sits underneath top white triangle to look like a border
+  border-top-color: $color-white;
+  top: 0;	
+  z-index: 2;
+}
+
+
+// :::::::::: front page headline
+.home-heading {
+  width: 100%;
+  float: left;
+  background-color: $color-blue;
+  text-align: center;
+    
+  .headline-wrap {
+    width: 100%;
+    max-width: 100%;
+    float: left;  
+    overflow: hidden;
+  }
+  
+  .house-icon-wrap {
+    width: 10%;
+    float: left;
+    margin: 10px 45%;
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 30px 0;
+      margin: 0 25%;  
+    }
+    
+  }
+  
+  .lp-headline {
+    color: $color-white;
+    font-family: $font-black;
+    text-align: center;	
+    text-transform: uppercase;
+  }
+  
+  h1.lp-headline {
+    width: 100%;
+    margin: 0px auto;
+    padding-top: 25px;	
+    font-size: 2em;
+    line-height: 1em;
+    
+    @include breakpoint ($breakpoint-ipad-p) {
+      font-size: 1.5em;
+    }
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      font-size: 1.2em;  
+    }
+    
+  }
+
+  h2.lp-headline {
+    width: 100%;
+	  margin: 0 auto;
+	  padding-bottom: 20px;
+	  font-size: 1.09em;
+	  line-height: 1.2em;
+	  
+	  @include breakpoint ($breakpoint-ipad-p) {
+      font-size: 0.81em;
+    }
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      margin-top: 10px;
+      padding-bottom: 30px;
+      font-size: 0.75em;  
+    }
+    
+  }
+ 
+} // .home-heading
 
 
 // home video
@@ -218,33 +377,107 @@ body {
 	background: url('https://uncommonrealestate.com/wp-content/uploads/2015/02/video-background.svg');
 	background-size: 100%;
   background-repeat: no-repeat;
+  
+  @include breakpoint ($breakpoint-iphone-p) {
+    background: none;  
+  }
   		
   .video-wrap {
 	  width: 50%;
 	  margin: 0 auto; 
 	  box-sizing: border-box;
-	  padding: 131px 0; 
+	  padding: 10px 0; 
+	  
+	  @include breakpoint ($breakpoint-one) {
+      padding: 15px 0 0;
+    }
+	  
+	  @include breakpoint ($breakpoint-two) {
+      padding: 30px 0 0;
+    }
+	  
+	  @include breakpoint ($breakpoint-three) {
+      padding: 30px 0 0;
+    }
+	  
+	  @include breakpoint ($breakpoint-four) {
+      padding: 30px 0 0;
+    }
+	  
+	  @include breakpoint ($breakpoint-ipad-p) {
+      padding: 30px 0 0;
+    }
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      width: 90%;
+      margin: 20px 5%;  
+    }
+	  
   }
   
+  //desktop
   .video-highlight {
-  	color: $color-white;
-  	background-color: $color-orange;
+  	color: $color-blue;
   	text-align: center;
   	font-family: $font-bold;
-  	font-size: 1.2em;
+  	font-size: 2.8em;
+  	
+  	@include breakpoint ($breakpoint-one) {
+      font-size: 2.65em;	
+  	}
+  	
+  	@include breakpoint ($breakpoint-two) {
+      font-size: 2.45em;	
+  	}
+  	
+  	@include breakpoint ($breakpoint-three) {
+      font-size: 2.25em;	
+  	}
+  	
+  	@include breakpoint ($breakpoint-four) {
+      font-size: 2.15em;	
+  	}
+  	
+  	@include breakpoint ($breakpoint-ipad-p) {
+      font-size: 1.75em;
+    }
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      font-size: 1.2em;  
+    }
+  	
   }
   
   .video-foot {
+    @include clearfix;
 	  box-sizing: border-box;
-	  margin-top: -12px;
-	  padding: 20px 0px 15px;
-  	color: $color-white;
-  	background-color: $color-orange;
+	  //padding: 20px 0px 15px;
+  	color: $color-blue;
   	text-align: center;
   	font-family: $font-bold;
-  	font-size: 0.7em;
+  	font-size: 0.75em;
+  	
+  	@include breakpoint ($breakpoint-one) {
+      font-size: 0.7em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-two) {
+      font-size: 0.65em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-three) {
+       font-size: 0.60em;
+    }
+  	
+  	@include breakpoint ($breakpoint-four) {
+      font-size: 0.57em;	
+  	}
+  	
+  	@include breakpoint ($breakpoint-ipad-p) {
+      font-size: 0.45em;
+    }
   }
-  
+    
 } // .video
 
 // course information
@@ -255,27 +488,355 @@ body {
 	background-color: $color-blue;
 	font-family: $font-regular;
 	
-	.white-triangle{
-		margin: 0 auto;
-		display: block;
-		width: 75%;
-		position: relative;
+	@include breakpoint ($breakpoint-three) {
+    font-size: 0.8em;	
 	}
 	
-	//the triangle part
-	.white-triangle:before {
-		@extend %triangles;
-		border-top-color: $color-white;		
-		top: -2px; //match border-top thickness	
-		z-index: 4;	
+	@include breakpoint ($breakpoint-ipad-p) {
+    font-size: 0.6em;
+  }
+  
+  @include breakpoint ($breakpoint-iphone-p) {
+    font-size: 0.6em;
+  }
+	
+	.breakdown-wrap {
+  	 width: 90%;
+     float: left;
+     margin: 20px 5%;     
 	}
 	
-	.white-triangle:after {
-		@extend %triangles;
-		//sits underneath top white triangle to look like a border
-		border-top-color: $color-white;
-		top: 0;	
-		z-index: 2;
+	ul {
+    box-sizing: border-box;	
+	}
+	
+	img {
+    box-sizing: border-box;
+    
+    @include breakpoint ($breakpoint-ipad-p) {
+      max-width: 88% !important;
+    }
+    
+	}
+	
+	h1 {
+		color: $color-white;
+		text-align: center;
+		font-family: $font-black;
+		font-size: 1.5em;
+		
+		@include breakpoint ($breakpoint-main) {
+  		font-size: 1.2em;
+		}
+		
+		@include breakpoint ($breakpoint-two) {
+  		font-size: 1.1em;
+		}
+		
+		@include breakpoint ($breakpoint-ipad-p) {
+      font-size: 1.2em;
+    }
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      font-size: 1.2em;
+    }
+		
+	}
+	
+	.features {
+  	
+  	@include breakpoint ($breakpoint-iphone-p) {
+    	margin-top: 10px;
+  	  text-align: center;
+    }
+    
 	}
 	
 } // .course-breakdown
+
+.course-list {
+  width: 90%;
+	float: left;
+	margin: 0 5%;
+	color: $color-blue;
+  font-family: $font-regular;
+  
+  @include breakpoint ($breakpoint-four) {
+		font-size: 0.8em;
+	}
+	
+	@include breakpoint ($breakpoint-ipad-p) {
+    font-size: 0.7em;
+  }
+	
+	.logo-wrap {
+  	width: 40%;
+  	margin: 20px 30%;
+  	
+  	@include breakpoint ($breakpoint-iphone-p) {
+    	width: 90%;
+    	margin: 20px 5%;
+  	}
+  	
+  	img {
+    	width: 100%;
+  	}
+  	
+	} // .logo-wrap
+	
+	h2 {
+  	margin: 0 auto;
+    color: $color-yellow;
+  	font-family: $font-bold;
+  	line-height: 1.387em;
+	}
+	
+	.list {
+  	line-height: 1.8;  	
+	}
+	
+	.session-title {
+  	color: $color-yellow;
+  	font-family: $font-bold;
+	}
+	
+	.button-wrap {
+  	float: left;
+  	width: 100%;
+  	margin-top: 0px;
+  	padding: 0;
+  	text-align: center;
+  	
+  	a {
+    	display: block;
+    	box-sizing: border-box;
+    	padding: 30px 0;
+    	color: $color-white;
+    	background-color: $color-orange;
+    	
+    	&:hover {
+      	background-color: $color-blue;
+    	}
+  	}
+  	
+	} // .button-wrap
+	
+	p {
+  	margin: 0 auto 25px;
+  	color: $color-blue;
+  	font-size: 0.85em;
+  	-moz-hyphens: inherit;
+  	
+  	@include breakpoint ($breakpoint-main) {
+  		margin: 0 auto 10px;
+		}
+  	
+  	a {
+    	font-weight: normal;
+    	color: $color-orange;
+    	
+    	&:hover {
+      	color: $color-blue;
+    	}
+  	}
+	}
+	
+	.fancy-wrap {
+    width: 100%;
+    margin: 40px 0 0;
+    padding: 6px 0;
+    text-align: center;
+    overflow: hidden;
+     
+/*
+    @include breakpoint ($breakpoint-iphone-p) {
+       margin: 20px 0 0;
+    }
+*/
+    
+  } 
+  
+	.subtitle {
+    margin: 0 0 2em 0;
+    text-align: center;
+    font-family: $font-bold;
+    font-size: 1.2em;
+  }
+   
+  .fancy {
+    line-height: 0.5;
+    text-align: center;
+  }
+  
+  .fancy span {
+    display: inline-block;
+    position: relative; 
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      line-height: 1.2em;  
+    } 
+    
+  }
+  
+  .fancy span:before,
+  .fancy span:after {
+    content: "";
+    position: absolute;
+    height: 9px;
+    border-bottom: 1px solid $color-blue;
+    border-top: 1px solid $color-blue;
+    top: 0;
+    width: 600px;
+  }
+  
+  .fancy span:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+  
+  .fancy span:after {
+    left: 100%;
+    margin-left: 15px;
+  }
+  
+  .span_1_of_2 {
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      margin-bottom: 20px; 
+    } 
+    
+  }
+	
+} // .course-list
+
+
+.the-difference {
+  width: 90%;
+	float: left;
+	margin: 40px 5% 0;
+	color: $color-blue;
+  font-family: $font-regular;
+  
+  img {
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      margin-bottom: 20px; 
+    } 
+    
+  }
+  
+  h2 {
+  	margin: 0 auto;
+    color: $color-yellow;
+  	font-family: $font-bold;
+  	line-height: 1em;
+	}
+	
+	p {
+  	margin: 10px 0 0;
+  	font-family: $font-italic;
+  	font-size: 0.75em;
+  	-moz-hyphens: inherit;
+  	
+  	@include breakpoint ($breakpoint-one) {
+    	font-size: 0.70em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-two) {
+    	font-size: 0.69em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-three) {
+    	font-size: 0.64em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-four) {
+    	font-size: 0.58em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-iphone-p) {
+      font-size: 0.75em;
+    } 
+    
+	}
+  
+} // .the-difference
+
+
+.call-to-action {
+  width: 90%;
+	float: left;
+	margin: 40px 5% 0;
+  text-align: center;
+  
+  a {
+    display: block;
+    box-sizing: border-box;
+    margin: 0 20px;
+    padding: 30px 0px;
+    color: $color-white;
+    background-color: $color-orange;
+    font-family: $font-bold;
+    font-weight: normal;
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      margin-bottom: 10px;
+      font-size: 0.85em;
+    } 
+    
+  	&:hover {
+    	background-color: $color-blue;
+  	}
+	}
+	
+} // .call-to-action
+
+
+.footer {
+  width: 90%;
+	float: left;
+	margin: 40px 5% 0;
+  text-align: center;
+  -moz-hyphens: inherit;
+  hyphens: none;
+  -webkit-hyphens: none;
+  
+  @include breakpoint ($breakpoint-iphone-p) {
+    margin-top: 10px;
+  } 
+  
+  p {
+  	margin: 10px auto;
+  	
+  	@include breakpoint ($breakpoint-four) {
+    	font-size: 0.9em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-ipad-p) {
+      font-size: 0.7em;
+    }
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      font-size: 0.7em;
+    }
+  
+	}
+	
+	strong {
+  	font-family: $font-bold;
+  	font-weight: normal;
+  	hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+	}
+	
+	a {
+  	color: $color-orange;
+  	font-weight: normal;
+  	
+  	&:hover {
+    	color: $color-blue;
+  	}
+	}
+	
+} // .footer
