@@ -22,7 +22,7 @@ body {
   .no-sidebar #main {
     width: 100%;
     max-width: 100em;
-    margin: 0 auto;
+    margin: -17px auto 0; // fix for weird white bar at top
 }
 
 // rad grid system son
@@ -294,12 +294,28 @@ header {
   z-index: 2;
 }
 
+em {
+  font-family: $font-bold-italic;
+}
+
+.em-one {
+  font-size: 1.1em;
+}
+
+.em-two {
+  font-size: 1.19em;
+}
+
+
+// ::::::::::::::::::::::::::::::
+// :::::::::: homepage ::::::::::
+// ::::::::::::::::::::::::::::::
 
 // :::::::::: front page headline
 .home-heading {
   width: 100%;
   float: left;
-  background-color: $color-blue;
+  background-color: $color-white;
   text-align: center;
     
   .headline-wrap {
@@ -324,7 +340,7 @@ header {
   }
   
   .lp-headline {
-    color: $color-white;
+    color: $color-blue;
     font-family: $font-black;
     text-align: center;	
     text-transform: uppercase;
@@ -374,9 +390,9 @@ header {
 	width: 100%;
 	float: left;
 	margin-top: -30px;
-	background: url('https://uncommonrealestate.com/wp-content/uploads/2015/02/video-background.svg');
-	background-size: 100%;
-  background-repeat: no-repeat;
+	//background: url('https://uncommonrealestate.com/wp-content/uploads/2015/02/video-background.svg');
+	//background-size: 100%;
+  //background-repeat: no-repeat;
   
   @include breakpoint ($breakpoint-iphone-p) {
     background: none;  
@@ -384,6 +400,7 @@ header {
   		
   .video-wrap {
 	  width: 50%;
+	  max-width: 650px;
 	  margin: 0 auto; 
 	  box-sizing: border-box;
 	  padding: 10px 0; 
@@ -417,33 +434,33 @@ header {
   
   //desktop
   .video-highlight {
-  	color: $color-blue;
+  	color: $color-yellow;
   	text-align: center;
   	font-family: $font-bold;
-  	font-size: 2.8em;
+  	font-size: 1.47em;
   	
   	@include breakpoint ($breakpoint-one) {
-      font-size: 2.65em;	
+      font-size: 1.47em;	
   	}
   	
   	@include breakpoint ($breakpoint-two) {
-      font-size: 2.45em;	
+      font-size: 1.47em;	
   	}
   	
   	@include breakpoint ($breakpoint-three) {
-      font-size: 2.25em;	
+      font-size: 1.47em;	
   	}
   	
   	@include breakpoint ($breakpoint-four) {
-      font-size: 2.15em;	
+      font-size: 1.47em;	
   	}
   	
   	@include breakpoint ($breakpoint-ipad-p) {
-      font-size: 1.75em;
+      font-size: 1.1em;
     }
     
     @include breakpoint ($breakpoint-iphone-p) {
-      font-size: 1.2em;  
+      font-size: 0.9em;  
     }
   	
   }
@@ -452,29 +469,29 @@ header {
     @include clearfix;
 	  box-sizing: border-box;
 	  //padding: 20px 0px 15px;
-  	color: $color-blue;
+  	color: $color-yellow;
   	text-align: center;
   	font-family: $font-bold;
-  	font-size: 0.75em;
+  	font-size: 1.1em;
   	
   	@include breakpoint ($breakpoint-one) {
-      font-size: 0.7em;
+      font-size: 1.1em;
   	}
   	
   	@include breakpoint ($breakpoint-two) {
-      font-size: 0.65em;
+      font-size: 1.1em;
   	}
   	
   	@include breakpoint ($breakpoint-three) {
-       font-size: 0.60em;
+       font-size: 1.1em;
     }
   	
   	@include breakpoint ($breakpoint-four) {
-      font-size: 0.57em;	
+      font-size: 1.1em;
   	}
   	
   	@include breakpoint ($breakpoint-ipad-p) {
-      font-size: 0.45em;
+      font-size: 0.8em;
     }
   }
     
@@ -647,13 +664,6 @@ header {
     padding: 6px 0;
     text-align: center;
     overflow: hidden;
-     
-/*
-    @include breakpoint ($breakpoint-iphone-p) {
-       margin: 20px 0 0;
-    }
-*/
-    
   } 
   
 	.subtitle {
@@ -792,10 +802,131 @@ header {
 } // .call-to-action
 
 
+.testimonials {
+  width: 90%;
+	float: left;
+	margin: 0 5%;
+  text-align: center;
+  
+  .fancy-wrap {
+    width: 100%;
+    margin: 40px 0 0;
+    padding: 6px 0;
+    text-align: center;
+    overflow: hidden;
+  } 
+  
+	.subtitle {
+    margin: 0 0 2em 0;
+    text-align: center;
+    font-family: $font-bold;
+    font-size: 1.2em;
+  }
+   
+  .fancy {
+    line-height: 0.5;
+    text-align: center;
+    color: $color-blue;
+  }
+  
+  .fancy span {
+    display: inline-block;
+    position: relative; 
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      line-height: 1.2em;  
+    } 
+    
+  }
+  
+  .fancy span:before,
+  .fancy span:after {
+    content: "";
+    position: absolute;
+    height: 9px;
+    border-bottom: 1px solid $color-blue;
+    border-top: 1px solid $color-blue;
+    top: 0;
+    width: 600px;
+  }
+  
+  .fancy span:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+  
+  .fancy span:after {
+    left: 100%;
+    margin-left: 15px;
+  }
+  
+  .bxslider div {
+    @include clearfix;
+    width: 100%;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    margin: 0 auto 50px;
+    padding: 10px;    
+  }
+  
+  p {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+/*
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+*/
+    box-sizing: border-box;
+    padding: 0 50px;
+    color: $color-blue;
+    text-align: left;
+    font-size: 1em;
+    -moz-hyphens: inherit;
+    hyphens: none;
+    -webkit-hyphens: none;
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      padding: 0 10px;
+    }
+    
+    
+  }
+  
+  .title {
+    color: $color-yellow;
+    font-family: $font-italic;
+  }
+  
+/*
+  .center-me {
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+*/
+
+  .bx-wrapper .bx-controls-direction a {
+    @include breakpoint ($breakpoint-iphone-p) {
+      display: none;
+    }
+  }
+  
+} // .testimonials
+
+
 .footer {
   width: 90%;
 	float: left;
-	margin: 40px 5% 0;
+	margin: 0 5% 0;
   text-align: center;
   -moz-hyphens: inherit;
   hyphens: none;
@@ -840,3 +971,300 @@ header {
 	}
 	
 } // .footer
+
+
+// :::::::::::::::::::::::::::::::::::::::
+// :::::::::: 200 problems page ::::::::::
+// :::::::::::::::::::::::::::::::::::::::
+.two-hundered-problems {
+  
+  .course-list .button-wrap a {
+    padding: 20px 0;
+    margin: 10px 0;
+  }
+
+} // .two-hundered-problems
+
+.two-hundered-problems-heading {
+  width: 100%;
+  float: left;
+  background-color: $color-white;
+  text-align: center;
+    
+  .headline-wrap {
+    width: 100%;
+    max-width: 100%;
+    float: left;  
+    overflow: hidden;
+  }
+  
+  .house-icon-wrap {
+    width: 10%;
+    float: left;
+    margin: 10px 45%;
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 30px 0;
+      margin: 0 25%;  
+    }
+    
+  }
+  
+  .lp-headline {
+    color: $color-blue;
+    font-family: $font-black;
+    text-align: center;	
+    text-transform: uppercase;
+  }
+  
+  h1.lp-headline {
+    width: 100%;
+    margin: 0px auto;
+    padding-top: 25px;	
+    font-size: 2em;
+    line-height: 1em;
+    
+    @include breakpoint ($breakpoint-ipad-p) {
+      font-size: 1.5em;
+    }
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      font-size: 1.2em;  
+    }
+    
+  }
+
+  h2.lp-headline {
+    width: 100%;
+	  margin: 0 auto;
+	  padding-bottom: 20px;
+	  font-size: 1.35em;
+	  line-height: 1.2em;
+	  
+	  @include breakpoint ($breakpoint-ipad-p) {
+      font-size: 0.81em;
+    }
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      margin-top: 10px;
+      padding-bottom: 30px;
+      font-size: 0.75em;  
+    }
+    
+  }
+  
+} // .two-hundered-problems-heading
+
+
+.course-tout {
+  width: 90%;
+	float: left;
+	margin: 40px 5% 0;
+	color: $color-blue;
+  font-family: $font-regular;
+  
+  img {
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      margin-bottom: 20px; 
+    } 
+    
+  }
+	
+	p {
+  	margin: 30px 0 0;
+  	color: $color-yellow;
+  	font-family: $font-italic;
+  	font-size: 1.75em;
+  	-moz-hyphens: inherit;
+  	
+  	@include breakpoint ($breakpoint-one) {
+    	font-size: 0.70em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-two) {
+    	font-size: 0.69em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-three) {
+    	font-size: 0.64em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-four) {
+    	font-size: 0.58em;
+  	}
+  	
+  	@include breakpoint ($breakpoint-iphone-p) {
+      font-size: 0.75em;
+    } 
+    
+	}
+  
+} // .course-tout
+
+
+.preview-tout {
+  float: left;
+  margin: 10px auto;
+  
+  a {
+    float: left;
+    width: 70%;
+    margin: 0 15%;
+  	color: $color-orange;
+  	text-align: center;
+  	font-weight: normal;
+  	
+  	&:hover {
+    	color: $color-blue;
+  	}
+	}
+  
+  strong {
+    float: left;
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+    font-family: $font-bold;
+    font-weight: normal;
+    font-size: 0.7em;
+    line-height: 0.5;
+  }
+  
+} // .preview-tout
+
+.problems-list {
+  width: 90%;
+	float: left;
+	margin: 40px 5% 0;
+	color: $color-blue;
+  font-family: $font-regular;
+  -moz-hyphens: inherit;
+  hyphens: none;
+  -webkit-hyphens: none;
+  
+  .fancy-wrap {
+    width: 100%;
+    height: 30px;
+    margin: 40px 0 0;
+    padding: 6px 0;
+    text-align: center;
+    overflow: hidden;
+  } 
+  
+	.subtitle {
+    margin: 0 0 2em 0;
+    text-align: center;
+    font-family: $font-bold;
+    font-size: 1.2em;
+  }
+   
+  .fancy {
+    line-height: 0.5;
+    text-align: center;
+    color: $color-blue;
+  }
+  
+  .fancy span {
+    display: inline-block;
+    position: relative; 
+    
+    @include breakpoint ($breakpoint-iphone-p) {
+      line-height: 1.2em;  
+    } 
+    
+  }
+  
+  .fancy span:before,
+  .fancy span:after {
+    content: "";
+    position: absolute;
+    height: 9px;
+    border-bottom: 1px solid $color-blue;
+    border-top: 1px solid $color-blue;
+    top: 0;
+    width: 600px;
+  }
+  
+  .fancy span:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+  
+  .fancy span:after {
+    left: 100%;
+    margin-left: 15px;
+  }
+  
+  ul {
+    margin: 10px auto;
+  }
+  
+  li {
+    font-size: 0.9em;
+  }
+  
+  .highlight {
+    color: $color-yellow;
+    font-family: $font-bold;
+  }
+  
+  .prob-side-col {
+    text-align: center;
+    
+    img {
+      width: 100%;
+      margin: 10px auto;
+    }
+    
+    p {
+      color: $color-blue;
+      font-size: 0.65em;
+    }
+    
+    a {
+      display: block;
+      box-sizing: border-box;
+      padding: 30px;
+      color: $color-white;
+      background-color: $color-orange;
+      text-align: center;
+      font-family: $font-regular;
+      font-size: 1em;
+      font-weight: normal;
+      
+      &:hover {
+        background-color: $color-blue;
+      }
+      
+    }
+    
+  } // .prob-side-col
+  
+  h2 {
+  	margin: 0 auto;
+    color: $color-yellow;
+  	font-family: $font-bold;
+  	line-height: 1.387em;
+	}
+	
+	.session-title {
+  	color: $color-yellow;
+  	font-family: $font-bold;
+	}
+	
+	p {
+  	margin: 0 auto 25px;
+  	color: $color-blue;
+  	font-size: 0.85em;
+  	-moz-hyphens: inherit;
+  	
+  	@include breakpoint ($breakpoint-main) {
+  		margin: 0 auto 10px;
+		}
+  	
+	}
+	  
+} // .problems-list

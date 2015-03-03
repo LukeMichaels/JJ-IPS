@@ -29,6 +29,11 @@ global $woo_options, $woocommerce;
   	woo_head();
   ?>
 
+  <!-- :::::::::: Slideshow Script/Stylesheet :::::::::: -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="<?php bloginfo( 'template_url' ); ?>/includes/js/jquery.bxslider.min.js"></script>
+  <link href="<?php bloginfo( 'template_url' ); ?>/includes/js/jquery.bxslider.css" rel="stylesheet" />
+
   
   <!-- :::::::::: Stylesheets added by Luke :::::::::: -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">

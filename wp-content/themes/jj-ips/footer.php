@@ -73,5 +73,19 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 </div><!-- /#wrapper -->
 <?php wp_footer(); ?>
 <?php woo_foot(); ?>
+<script>
+    $(document).ready(function(){
+      $('.bxslider').bxSlider({
+        auto: true,
+        pause: 20000,
+        easing: 'ease-in',
+        adaptiveHeight: false,
+        controls: true,
+        pager: false,
+        infiniteLoop: true,
+        maxSlides: 1,
+      });
+    });
+  </script>
 </body>
 </html>
